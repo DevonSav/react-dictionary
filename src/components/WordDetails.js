@@ -2,7 +2,7 @@ import React from 'react';
 
 function WordDetails(props) {
 	return (
-		<>
+		<div className="word-details">
 			<div className="word-definition">
 				<h2>Definition</h2>
 				<p>{props.definition}</p>
@@ -11,7 +11,7 @@ function WordDetails(props) {
 				<h2>Usage</h2>
 				<p>{props.usage}</p>
 			</div>
-		</>
+		</div>
 	);
 }
 
