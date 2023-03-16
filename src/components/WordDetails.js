@@ -1,14 +1,36 @@
 import React from 'react';
 
 function WordDetails(props) {
+
+	let defArr = props.definition;
+	let defElem = (
+		<ul>
+			<li>Invalid word or incorrect definition data.</li>
+		</ul>
+	);
+
+	if (defArr != undefined) {
+		defElem = (
+			<ul>
+				{defArr.map((item, index) => (
+					<li key={index}>
+						{item}
+					</li>
+				))}
+			</ul>
+		);
+	}
+
 	return (
 		<div className="word-details">
 			<div className="word-definition">
-				<h2>Definition</h2>
-				<p>{props.definition}</p>
+				<h3>Definition</h3>
+				<div className="definition-list">
+					{defElem}
+				</div>
 			</div>
 			<div className="word-usage">
-				<h2>Usage</h2>
+				<h3>Usage</h3>
 				<p>{props.usage}</p>
 			</div>
 		</div>
