@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 
 /**
- * FIXME: Used for testing the fetch function
+ * FIXME: Used for testing the fetch function.
  */
 function forTestingFetch() {
 	const word = "voluminous";
@@ -20,7 +20,9 @@ test('renders correctly', () => {
 	expect(tree).toMatchSnapshot();
 });
 
-
+/**
+ * Checks that the shortdef value returned by the fetch is not undefined.
+ */
 test('shortdef was not undefined', () => {
 	return forTestingFetch()
 		.then(res => res.json())
@@ -28,6 +30,8 @@ test('shortdef was not undefined', () => {
 				const jsonObj = res;
 				// Get short definition
 				let shortdef = jsonObj[0]['shortdef'];
+
+				// Check its value
 				expect(shortdef).not.toBe(undefined);
 			},
 			(error) => {
@@ -37,6 +41,9 @@ test('shortdef was not undefined', () => {
 		);
 });
 
+/**
+ * Checks that the shortdef data matches the expected test case (the word 'voluminous').
+ */
 test('shortdef was expected data', () => {
 	return forTestingFetch()
 		.then(res => res.json())
@@ -44,6 +51,8 @@ test('shortdef was expected data', () => {
 				const jsonObj = res;
 				// Get short definition
 				let shortdef = jsonObj[0]['shortdef'];
+
+				// Check that it is what was expected
 				expect(shortdef).toStrictEqual(["having or marked by great volume or bulk : large; also : full", "numerous", "filling or capable of filling a large volume or several volumes"]);
 			},
 			(error) => {
