@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="dictionary"
+>
+  <h2
+    id="main-heading"
+  >
+    Dictionary API Call
+  </h2>
+  <form
+    onSubmit={[Function]}
+  >
+    <p>
+      Word Input:
+    </p>
+    <input
+      onChange={[Function]}
+      type="text"
+    />
+    <br />
+    <input
+      type="submit"
+      value="Submit"
+    />
+  </form>
+  <br />
+  <div>
+    Loading...
+  </div>
+</div>
+`;
